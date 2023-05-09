@@ -1,0 +1,57 @@
+@import '../../../theme/dark.css';
+@import '../../../theme/light.css';
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.backLink {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.backLink:hover {
+    color: #0056b3;
+}
+
+.pokemonName {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.pokemonImage {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.pokemonStat {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.pokemonAbilities {
+    margin-top: 20px;
+}
+
+.pokemonAbilities h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.pokemonAbilities ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pokemonAbilities li {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}

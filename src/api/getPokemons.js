@@ -1,16 +1,20 @@
-import axios from "axios"
+import {requester} from '../requester'
 
-const BASE_URL = 'https://pokeapi.co/api/v2/'
 
-export const fetchPokemons = async() => {
+export const fetchPokemons = async(params) => {
     try {
-        const { data } = await axios.get(BASE_URL + 'pokemon?limit=20&offset=0')
+        const { data } = await requester.get(`pokemon`, {params})
         return data;
     } catch (error) {
         console.log(error);
     }
 }
 
-export const getPokemonUrl = async(url) => {
-
+export const getPokemonByName = async(name) => {
+    try {
+        const { data } = await  requester.get('/pokemon/' + name)
+        return data
+    } catch (error) {
+        console.log(error)
+    }
 }

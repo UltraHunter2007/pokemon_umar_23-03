@@ -1,29 +1,26 @@
-import React, {useEffect, useState} from 'react'
-import classes from './PokemonCard.module.css'
+import React, {useEffect, useState} from 'react';
+import {getPokemonByName} from "../../api/getPokemons";
+import {Link} from "react-router-dom";
+import classes from "./PokemonCard.module.css"
+
 const PokemonCard = ({ pokemon }) => {
-    const [ pokemonData, setPokemonData ] = useState(null)
+    const [ pokemonInfo, setPokemonInfo ] = useState()
 
     useEffect(() => {
-        const fetchPokemonData = async () => {
-            const response = await fetch(pokemon.url)
-            const data = await response.json()
-            setPokemonData(data)
-        }
-        fetchPokemonData()
-    }, [pokemon.url])
+        getPokemonByName(pokemon.name)
+            .then((data) => {
+                setPokemonInfo(data)
+            })
+    }, [ pokemon.name ])
 
     return (
-        <div className='pokemonCard'>
-            <h3>{pokemon.name}</h3>
-            {pokemonData && (
-                <img
-                    src={pokemonData.sprites.other.dream_world.front_default}
-                    alt={pokemon.name}
-                    className={classes.pokemonImage}
-                />
-            )}
+        <div className={classes.pokemonCard}>
+            <Link to={`/pokemon/${pokemon.name}`} className={classes.link}>
+                <p>{pokemon.name}</p>
+                <img src={pokemonInfo && pokemonInfo.sprites.other.dream_world.front_default} alt=""/>
+            </Link>
         </div>
-    )
-}
+    );
+};
 
-export default PokemonCard
+export default PokemonCard;

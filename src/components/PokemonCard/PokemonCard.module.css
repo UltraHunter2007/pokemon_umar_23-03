@@ -1,4 +1,31 @@
-.pokemonImage {
-    max-width: 100%;
-    height: auto;
+@import '../../theme/dark.css';
+@import '../../theme/light.css';
+
+.pokemonCard {
+    width: 250px;
+    height: 500px;
+    border: 1px solid red;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: var(--card-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.pokemonCard img {
+    width: 50%;
+    height: 350px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.link:hover {
+    text-decoration: underline;
 }

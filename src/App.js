@@ -1,30 +1,30 @@
 import { useState, useEffect} from 'react';
 import './App.css';
-import { fetchPokemons } from './api/getPokemons';
-import PokemonCard from './components/PokemonCard/PokemonCard';
+import { Routes, Route } from "react-router-dom";
+import AboutUs from "./components/pages/AboutUs/AboutUs"
+import MainPage from "./components/pages/MainPage/MainPage"
+import Pokemon from "./components/pages/PokemonInfo/Pokemon"
+
 function App() {
     const [ theme, setTheme ] = useState('light');
-    const [ pokemonList, setPokemonList ] = useState([])
 
     const toggleTheme  = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
         setTheme(newTheme);
     }
 
-    useEffect(() => {
-        fetchPokemons().then((data) => {
-            setPokemonList([...data.results])
-        })
-    }, [])
-
     return (
         <div className={`app ${theme}`}>
+            <h1>Pokemon Project</h1>
+            <button onClick={toggleTheme} className='toggleTheme'>Change theme</button>
             <div className='container'>
-                Pokemon project
-                <button onClick={toggleTheme}>Change theme</button>
-                <div className='pokemonList'>
-                    {pokemonList.map(pokemon => <PokemonCard pokemon={pokemon} />)}
-                </div>
+
+                <Routes>
+                    <Route path='/' element={<MainPage />}/>
+                    <Route path={'/about-us'} element={<AboutUs />}/>
+                    <Route path={'/pokemon/:name'} element={<Pokemon />}/>
+                </Routes>
+
             </div>
         </div>
     );

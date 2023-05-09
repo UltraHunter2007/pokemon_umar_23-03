@@ -12,14 +12,25 @@
     max-width: 1200px;
     margin: 0 auto;
 }
-.pokemonCard {
-    width: 250px;
-    height: 500px;
-    border: 1px solid red;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    background-color: var(--card-background);
+
+.toggleTheme {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
 }
+
+.toggleTheme .text {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
 
 .pokemonList {
     display: flex;

@@ -1,0 +1,49 @@
+@import '../../../theme/dark.css';
+@import '../../../theme/light.css';
+
+.mainPageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.mainPageTitle {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.mainPageButtons {
+    display: flex;
+    gap: 20px;
+}
+
+.mainPageButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.mainPageButton:hover {
+    background-color: #ff4827;
+}
+
+.mainPageLink {
+    text-decoration: none;
+}
+
+.pokemonList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 30px;
+}
