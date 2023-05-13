@@ -37,15 +37,17 @@ const MainPage = () => {
                     <button className={classes.mainPageButton}>To About Us</button>
                 </Link>
             </div>
+
+            <div className={classes.pokemonList}>
+                {pokemonList.map(pokemon => <PokemonCard key={pokemon.name} pokemon={pokemon} />)}
+            </div>
+
             <Pagination
                 page={page}
                 count={count}
                 handleNext={handleNext}
                 handlePrev={handlePrev}
             />
-            <div className={classes.pokemonList}>
-                {pokemonList.map(pokemon => <PokemonCard key={pokemon.name} pokemon={pokemon} />)}
-            </div>
         </div>
     );
 

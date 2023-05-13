@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
-import AboutUs from "./components/pages/AboutUs/AboutUs"
+import AboutPage from "./components/pages/AboutUs/AboutPage"
 import MainPage from "./components/pages/MainPage/MainPage"
 import Pokemon from "./components/pages/PokemonInfo/Pokemon"
 
@@ -21,7 +21,7 @@ function App() {
 
                 <Routes>
                     <Route path='/' element={<MainPage />}/>
-                    <Route path={'/about-us'} element={<AboutUs />}/>
+                    <Route path={'/about-us'} element={<AboutPage />}/>
                     <Route path={'/pokemon/:name'} element={<Pokemon />}/>
                 </Routes>
 

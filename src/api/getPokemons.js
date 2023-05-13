@@ -12,7 +12,7 @@ export const fetchPokemons = async(params) => {
 
 export const getPokemonByName = async(name) => {
     try {
-        const { data } = await  requester.get('/pokemon/' + name)
+        const { data } = await requester.get('/pokemon/' + name)
         return data
     } catch (error) {
         console.log(error)
